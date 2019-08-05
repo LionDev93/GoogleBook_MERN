@@ -1,5 +1,5 @@
 const config = {
-    apiBaseUrl: "http://localhost:8080"
+    apiBaseUrl: "https://googlebook-mern.herokuapp.com"
 };
 
 export default config
