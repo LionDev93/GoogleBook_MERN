@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, "client/build")));
 const db = require("./config/key").mongoURI;
 
 mongoose
-  .connect(db, { useNewUrlParser: true })
+  .connect(process.env.MONGODB_URI || db, { useNewUrlParser: true })
   .then(async () => {
     console.log("MongoDB connected");
     try {
@@ -55,6 +55,6 @@ app.get("*", async (req, res) => {
   res.redirect("/");
 });
 
-const port = process.env.PORT || 5001;
+const port = process.env.PORT || 8080;
 
 app.listen(port, () => console.log(`server up and running on port ${port} !`));
