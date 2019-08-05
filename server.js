@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, "client/build")));
 const db = require("./config/key").mongoURI;
 
 mongoose
-  .connect(process.env.MONGODB_URI || db, { useNewUrlParser: true })
+  .connect(db, { useNewUrlParser: true })
   .then(async () => {
     console.log("MongoDB connected");
     try {
