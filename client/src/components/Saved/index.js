@@ -28,7 +28,6 @@ class Saved extends Component {
       console.log("No savedBooks");
       return;
     }
-
     this.setState({ savedBooks: savedBooks });
   }
 
